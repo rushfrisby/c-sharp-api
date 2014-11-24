@@ -14,8 +14,15 @@ namespace UnitTestRestClient
     [TestMethod]
     public void Add()
     {
-      var purchase = new
-      {
+
+      var purchase = GetPurchaseData();
+      var result = Case.Add(_apiKey, purchase);
+      Assert.AreEqual(result.StatusCode, HttpStatusCode.Created);
+    }
+
+    private dynamic GetPurchaseData()
+    {
+      var purchase = new {
         browserIpAddress = Util.LocalIP(),
         orderId = Guid.NewGuid().ToString(),
         createdAt = DateTime.UtcNow.ToString("o"),
@@ -88,7 +95,6 @@ namespace UnitTestRestClient
             }
           }
         },
-
         card = new
         {
           cardHolderName = "Robert Smith",
@@ -149,9 +155,7 @@ namespace UnitTestRestClient
           }
         }
       };
-
-      var result = Case.Add(_apiKey, purchase);
-      Assert.AreEqual(result.StatusCode, HttpStatusCode.Created);
+      return purchase;
     }
   }
 }

@@ -10,7 +10,7 @@ namespace Signifyd.RestClient
 
   //Example Request
   //  $ curl https://api.signifyd.com/v2/cases \
-  //  -u JlkfkjOLIFDKJlaksgjjer09389cvn:
+  //  -u <key>:
 
     public class Auth
     {

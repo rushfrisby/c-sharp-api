@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Diagnostics;
 using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -9,12 +10,12 @@ namespace UnitTestRestClient
   [TestClass]
   public class UnitTestAuth
   {
-    private string _apiKey = "SFoNFEYtDTR1dyEgB5WssxCIp";
-
+   
     [TestMethod]
     public void Authenticate()
     {
-      var result = Auth.Authenticate(_apiKey);
+      var apiKey = Api.ApiKey;
+      var result = Auth.Authenticate(apiKey);
       Assert.AreEqual(result.StatusCode,HttpStatusCode.OK);
     }
   }

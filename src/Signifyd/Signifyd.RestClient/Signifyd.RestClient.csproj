@@ -48,9 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api.cs" />
-    <Compile Include="Case.cs" />
-    <Compile Include="Auth.cs" />
+    <Compile Include="CaseClient.cs" />
+    <Compile Include="AuthClient.cs" />
+    <Compile Include="ClientBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SignifydRestClient.cs" />
     <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>

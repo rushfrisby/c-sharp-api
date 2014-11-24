@@ -14,9 +14,11 @@ namespace UnitTestRestClient
     [TestMethod]
     public void Authenticate()
     {
-      var apiKey = Api.ApiKey;
-      var result = Auth.Authenticate(apiKey);
-      Assert.AreEqual(result.StatusCode,HttpStatusCode.OK);
+      using (var client = new SignifydRestClient())
+      {
+        var result = client.AuthClient.Authenticate();
+        Assert.AreEqual(result.StatusCode, HttpStatusCode.OK);
+      }
     }
   }
 }

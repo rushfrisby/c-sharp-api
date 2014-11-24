@@ -9,15 +9,29 @@ namespace UnitTestRestClient
   [TestClass]
   public class UnitTestCase
   {
-    private string _apiKey = "SFoNFEYtDTR1dyEgB5WssxCIp";
+
+    private string _caseId;
 
     [TestMethod]
-    public void Add()
+    public void CaseAdd()
     {
-
       var purchase = GetPurchaseData();
-      var result = Case.Add(_apiKey, purchase);
-      Assert.AreEqual(result.StatusCode, HttpStatusCode.Created);
+      using (var client = new SignifydRestClient())
+      {
+        var result = client.CaseClient.Add(purchase);
+        var json = result.content;
+
+        Assert.AreEqual(result.StatusCode, HttpStatusCode.Created);
+      }
+    }
+
+    [TestMethod]
+    public void CaseGetByCaseId()
+    {
+      using (var client = new SignifydRestClient()) {
+        var result = client.CaseClient.GetByCaseId(_caseId);
+        Assert.AreEqual(result.StatusCode, HttpStatusCode.OK);
+      }
     }
 
     private dynamic GetPurchaseData()

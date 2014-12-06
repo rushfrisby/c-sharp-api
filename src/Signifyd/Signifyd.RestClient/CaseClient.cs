@@ -25,7 +25,7 @@ namespace Signifyd.RestClient
     public IRestResponse Add(dynamic purchase)
     {
       var client = RestClientWithBasicAuth();
-      var request = RestRequestPost(Api.CaseAdd);
+      var request = RestRequestPost(Api.Action.CaseAdd);
       request.AddJsonBody(purchase);
       var result = client.Execute(request);
 
@@ -35,7 +35,7 @@ namespace Signifyd.RestClient
     public IRestResponse GetByCaseId(string caseId)
     {
       var client = RestClientWithBasicAuth();
-      var request = RestRequestGet(Api.CaseGet);
+      var request = RestRequestGet(Api.Action.CaseGet);
       request.AddUrlSegment(Api.Parms.Id, caseId);
       var result = client.Execute(request);
 

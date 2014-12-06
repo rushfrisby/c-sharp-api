@@ -20,5 +20,14 @@ namespace UnitTestRestClient
         Assert.AreEqual(result.StatusCode, HttpStatusCode.OK);
       }
     }
+
+    [TestMethod]
+    public async void AuthenticateAsync()
+    {
+      using (var client = new SignifydRestClient()) {
+        var result = await client.AuthClient.AuthenticateAsync();
+        Assert.AreEqual(result.StatusCode, HttpStatusCode.OK);
+      }
+    }
   }
 }

@@ -19,4 +19,6 @@ namespace Signifyd.Model
       public string LastUpdateDate { get; set; }
 
     }
+
+
 }

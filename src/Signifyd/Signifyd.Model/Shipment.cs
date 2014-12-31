@@ -10,7 +10,7 @@ namespace Signifyd.Model
     {
       public string Shipper { get; set; }
       public string ShippingMethod { get; set; }
-      public string ShippingPrice { get; set; }
+      public double ShippingPrice { get; set; }
       public string TrackingNumber { get; set; }
 
     }

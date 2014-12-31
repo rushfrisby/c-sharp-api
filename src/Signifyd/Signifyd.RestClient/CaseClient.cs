@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using RestSharp;
+using Signifyd.Model;
 
 namespace Signifyd.RestClient
 {
@@ -22,7 +23,7 @@ namespace Signifyd.RestClient
     {
     }
 
-    public IRestResponse Add(dynamic purchase)
+    public IRestResponse Add(Purchase purchase)
     {
       var client = RestClientWithBasicAuth();
       var request = RestRequestPost(Api.Action.CaseAdd);

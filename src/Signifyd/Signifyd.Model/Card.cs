@@ -8,13 +8,13 @@ namespace Signifyd.Model
 {
     public class Card
     {
-      public string cardHolderName { get; set; }
-      public int bin { get; set; }
-      public string last4 { get; set; }
-      public int expiryMonth { get; set; }
-      public int expiryYear { get; set; }
-      public string hash { get; set; }
-      public Address billingAddress { get; set; }
+      public string CardHolderName { get; set; }
+      public int Bin { get; set; }
+      public string Last4 { get; set; }
+      public int ExpiryMonth { get; set; }
+      public int ExpiryYear { get; set; }
+      public string Hash { get; set; }
+      public Address BillingAddress { get; set; }
 
     }
 }

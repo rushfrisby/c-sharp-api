@@ -17,9 +17,14 @@ namespace Signifyd.Model
       public string CvvResponseCode { get; set; }
       public string OrderChannel { get; set; }
       public string ReceivedBy { get; set; }
-      public string TotalPrice { get; set; }
+      public double TotalPrice { get; set; }
       public List<Product> Products { get; set; }
       public List<Shipment> Shipments { get; set; }
+      public List<Recipient> Recipients { get; set; }
+      public Card Card { get; set; }
+      public UserAccount UserAccount { get; set; }
+      public Seller Seller { get; set; }
+
 
     }
 }

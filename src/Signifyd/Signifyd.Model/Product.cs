@@ -12,9 +12,9 @@ namespace Signifyd.Model
       public string ItemName { get; set; }
       public string ItemUrl { get; set; }
       public string ItemImage { get; set; }
-      public string ItemQuantity { get; set; }
-      public string ItemPrice { get; set; }
-      public string ItemWeight { get; set; }
+      public int ItemQuantity { get; set; }
+      public double ItemPrice { get; set; }
+      public int ItemWeight { get; set; }
 
     }
 }

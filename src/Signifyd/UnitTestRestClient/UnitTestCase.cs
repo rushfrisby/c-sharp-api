@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Signifyd.Model;
 using Signifyd.RestClient;
 
 namespace UnitTestRestClient
@@ -19,7 +21,7 @@ namespace UnitTestRestClient
       using (var client = new SignifydRestClient())
       {
         var result = client.CaseClient.Add(purchase);
-        var json = result.content;
+        var json = result.Content;
 
         Assert.AreEqual(result.StatusCode, HttpStatusCode.Created);
       }
@@ -34,9 +36,148 @@ namespace UnitTestRestClient
       }
     }
 
-    private dynamic GetPurchaseData()
+    private Purchase GetPurchaseData()
     {
-      var purchase = new {
+      var purchase = new Purchase() {
+        BrowserIpAddress = Util.LocalIP(),
+        OrderId = Guid.NewGuid().ToString(),
+        CreatedAt = DateTime.UtcNow.ToString("o"),
+        PaymentGateway = "stripe",
+        Currency = "USD",
+        AvsResponseCode = "Y",
+        CvvResponseCode = "M",
+        TotalPrice = 74.99,
+        Shipments = new List<Shipment>() {
+            new Shipment(){	
+               TrackingNumber= "ABCDTEST1234",        		
+               ShippingMethod= "ground",
+               Shipper= "UPS",
+               ShippingPrice= 5.25
+            }
+        },
+        Products = new List<Product>()
+        {
+          new Product()
+          {
+              ItemId= "1",
+              ItemName= "Sparkly sandals",
+              ItemUrl= "http://mydomain.com/sparkly-sandals",
+              ItemImage= "http://mydomain.com/images/sparkly-sandals.jpeg",
+              ItemQuantity= 1,
+              ItemPrice= 49.99,
+              ItemWeight= 5
+          },
+          new Product()
+          {
+              ItemId= "2",
+              ItemName= "Sparkly sandals",
+              ItemUrl= "http://mydomain.com/sparkly-sandals",
+              ItemImage= "http://mydomain.com/images/sparkly-sandals.jpeg",
+              ItemQuantity= 1,
+              ItemPrice= 49.99,
+              ItemWeight= 5
+          }
+        },
+        Recipients = new List<Recipient>()
+        {
+          new Recipient(){
+            FullName= "Will Smith",
+            ConfirmationEmail= "will@gmail.com",
+            ConfirmationPhone= "111111111",
+            DeliveryAddress = new Address(){
+                StreetAddress= "123 ABS",
+                Unit= "4A",
+                City= "LA",
+                ProvinceCode= "CA",
+                PostalCode= "60621",
+                CountryCode= "US",
+                Latitude= "11.11",
+                Longitude= "-44.44"
+            }
+            },
+            new  Recipient(){
+            FullName= "George Smith",
+            ConfirmationEmail= "George@gmail.com",
+            ConfirmationPhone= "2222222",
+            DeliveryAddress = new Address() {
+                StreetAddress= "345",
+                Unit= "1A",
+                City= "NYC",
+                ProvinceCode= "NY",
+                PostalCode= "20121",
+                CountryCode= "US",
+                Latitude= "71.11",
+                Longitude= "-33.44"
+            }
+          }
+        },
+        Card = new Card()
+        {
+          CardHolderName = "Robert Smith",
+          Bin = 407441,
+          Last4 = "1234",
+          ExpiryMonth = 12,
+          ExpiryYear = 2015,
+          Hash = "sdfvbkel456hj",
+          BillingAddress = new Address()
+          {
+            StreetAddress = (string)null,
+            Unit = "2A",
+            City = "Chicago",
+            ProvinceCode = "IL",
+            PostalCode = "60622",
+            CountryCode = "US",
+            Latitude = "41.92",
+            Longitude = "-87.65"
+          }
+        },
+        UserAccount = new UserAccount()
+        {
+          EmailAddress = "bob@gmail.com",
+          Username = "bobbo",
+          Phone = "5555551212",
+          CreatedDate = "2013-01-18T17:54:31-05:00",
+          AccountNumber = "54321",
+          LastOrderId = "4321",
+          AggregateOrderCount = 40,
+          AggregateOrderDollars = 5000,
+          LastUpdateDate = "2013-01-18T17:54:31-05:00"
+        },
+        Seller = new Seller()
+        {
+          Name = "Amazon",
+          Domain = "amazon.com",
+          ShipFromAddress = new Address()
+          {
+            StreetAddress = "1850 Mercer Rd",
+            Unit = (string)null,
+            City = "Lexington",
+            ProvinceCode = "KY",
+            PostalCode = "40511",
+            CountryCode = "US",
+            Latitude = "38.07",
+            Longitude = "-84.53"
+          },
+          CorporateAddress = new Address()
+          {
+            StreetAddress = "410 Terry Ave",
+            Unit = "3L",
+            City = "Seattle",
+            ProvinceCode = "WA",
+            PostalCode = "98109",
+            CountryCode = "US",
+            Latitude = "47.6",
+            Longitude = "-122.33"
+          }
+        }
+      };
+      return purchase;
+    }
+
+    private dynamic GetPurchaseDataDynamic()
+    {
+      var purchase = new
+      {
         browserIpAddress = Util.LocalIP(),
         orderId = Guid.NewGuid().ToString(),
         createdAt = DateTime.UtcNow.ToString("o"),

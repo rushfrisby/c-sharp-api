@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signifyd.RestClient", "Sign
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestRestClient", "UnitTestRestClient\UnitTestRestClient.csproj", "{08443E03-3000-4D12-B91E-A63E3AF837A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signifyd.Model", "Signifyd.Model\Signifyd.Model.csproj", "{31C53E91-F427-4E0A-A5D2-86EBAE3CA0EF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{08443E03-3000-4D12-B91E-A63E3AF837A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08443E03-3000-4D12-B91E-A63E3AF837A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08443E03-3000-4D12-B91E-A63E3AF837A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C53E91-F427-4E0A-A5D2-86EBAE3CA0EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C53E91-F427-4E0A-A5D2-86EBAE3CA0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C53E91-F427-4E0A-A5D2-86EBAE3CA0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C53E91-F427-4E0A-A5D2-86EBAE3CA0EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

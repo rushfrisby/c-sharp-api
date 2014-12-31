@@ -61,6 +61,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Signifyd.Model\Signifyd.Model.csproj">
+      <Project>{31c53e91-f427-4e0a-a5d2-86ebae3ca0ef}</Project>
+      <Name>Signifyd.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Signifyd.RestClient\Signifyd.RestClient.csproj">
       <Project>{36150dd7-1cf0-4a54-b12d-05f7ff03e3b1}</Project>
       <Name>Signifyd.RestClient</Name>

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestRestClient", "UnitT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Signifyd.Model", "Signifyd.Model\Signifyd.Model.csproj", "{31C53E91-F427-4E0A-A5D2-86EBAE3CA0EF}"
 EndProject
+Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Modeling", "Modeling\Modeling.modelproj", "{51AFA9BA-058F-4BDA-BDD2-0FB65743FE62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{31C53E91-F427-4E0A-A5D2-86EBAE3CA0EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31C53E91-F427-4E0A-A5D2-86EBAE3CA0EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31C53E91-F427-4E0A-A5D2-86EBAE3CA0EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51AFA9BA-058F-4BDA-BDD2-0FB65743FE62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51AFA9BA-058F-4BDA-BDD2-0FB65743FE62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51AFA9BA-058F-4BDA-BDD2-0FB65743FE62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51AFA9BA-058F-4BDA-BDD2-0FB65743FE62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

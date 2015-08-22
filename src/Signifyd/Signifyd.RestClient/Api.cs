@@ -9,7 +9,7 @@ namespace Signifyd.RestClient
 {
 
   /// <summary>
-  /// Simple setting class to hold all the magic string specific to
+  /// Simple setting class to hold all the magic strings specific to
   /// this particular API.
   /// </summary>
   public static class Api
